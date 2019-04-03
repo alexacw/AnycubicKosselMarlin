@@ -30,6 +30,10 @@
 
 #define IS_RAMPS_EFB
 
+#define X_CS_PIN 4
+#define Y_CS_PIN 5
+#define Z_CS_PIN 6
+
 // FAN0 / D9  - Typically used for the part fan on Anycubic Delta devices
 #define FAN_PIN 7
 
@@ -56,27 +60,27 @@
 #if 0 && ENABLED(ULTRA_LCD)
 
   // LCD Display output pins
-  #if ENABLED(NEWPANEL) && ENABLED(PANEL_ONE)
-    #undef LCD_PINS_D6
-    #define LCD_PINS_D6    57
-  #endif
+  // #if ENABLED(NEWPANEL) && ENABLED(PANEL_ONE)
+  //   #undef LCD_PINS_D6
+  //   #define LCD_PINS_D6    57
+  // #endif
 
   // LCD Display input pins
-  #if ENABLED(NEWPANEL)
-    #if ENABLED(VIKI2) || ENABLED(miniVIKI)
-      #undef DOGLCD_A0
-      #define DOGLCD_A0    23
-    #elif ENABLED(ELB_FULL_GRAPHIC_CONTROLLER)
-      #undef BEEPER_PIN
-      #define BEEPER_PIN   33
-      #undef LCD_BACKLIGHT_PIN
-      #define LCD_BACKLIGHT_PIN 67
-    #endif
-  #elif ENABLED(MINIPANEL)
-    #undef BEEPER_PIN
-    #define BEEPER_PIN     33
-    #undef DOGLCD_A0
-    #define DOGLCD_A0      42
-  #endif
+  // #if ENABLED(NEWPANEL)
+  //   #if ENABLED(VIKI2) || ENABLED(miniVIKI)
+  //     #undef DOGLCD_A0
+  //     #define DOGLCD_A0    23
+  //   #elif ENABLED(ELB_FULL_GRAPHIC_CONTROLLER)
+  //     #undef BEEPER_PIN
+  //     #define BEEPER_PIN   33
+  //     #undef LCD_BACKLIGHT_PIN
+  //     #define LCD_BACKLIGHT_PIN 67
+  //   #endif
+  // #elif ENABLED(MINIPANEL)
+  //   #undef BEEPER_PIN
+  //   #define BEEPER_PIN     33
+  //   #undef DOGLCD_A0
+  //   #define DOGLCD_A0      42
+  // #endif
 
 #endif // ULTRA_LCD
