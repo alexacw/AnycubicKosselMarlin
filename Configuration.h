@@ -552,7 +552,7 @@
 // Make delta curves from many straight lines (linear interpolation).
 // This is a trade-off between visible corners (not enough segments)
 // and processor overload (too many expensive sqrt calls).
-#define DELTA_SEGMENTS_PER_SECOND 80
+#define DELTA_SEGMENTS_PER_SECOND 90
 
 // Convert feedrates to apply to the Effector instead of the Carriages
 //#define DELTA_FEEDRATE_SCALING
@@ -584,30 +584,16 @@
 #define PROBE_MANUALLY_STEP 0.05 // mm
 #endif
 
-#if ENABLED(ANCYUBIC_KOSSEL_PLUS)
-// Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-#define DELTA_PRINTABLE_RADIUS 116.0 // mm
-// Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 271.5 // mm
-// Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 186 // mm
-// Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 31 // mm
-// Horizontal offset of the universal joints on the carriages.
-#define DELTA_CARRIAGE_OFFSET 20.6 // mm
-// Horizontal distance bridged by diagonal push rods when effector is centered.
-#define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET - (DELTA_EFFECTOR_OFFSET) - (DELTA_CARRIAGE_OFFSET)) //mm  Get this value from auto calibrate
-#else
+//TODO:
 // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
 #define DELTA_PRINTABLE_RADIUS 90.0 // mm
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 210.0    // mm
+#define DELTA_DIAGONAL_ROD 218.0    // mm
 // Horizontal distance bridged by diagonal push rods when effector is centered.
-#define DELTA_RADIUS 97.0           //mm  Get this value from auto calibrate
-#endif
+#define DELTA_RADIUS 98.5           //mm  Get this value from auto calibrate
 
 // height from z=0 to home position
-#define DELTA_HEIGHT 294.50 // get this value from auto calibrate
+#define DELTA_HEIGHT 295.0 // get this value from auto calibrate
 
 #define DELTA_ENDSTOP_ADJ \
   {                       \
@@ -682,9 +668,9 @@
  *          TMC5130, TMC5130_STANDALONE
  * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
  */
-#define X_DRIVER_TYPE  TMC2130
-#define Y_DRIVER_TYPE  TMC2130
-#define Z_DRIVER_TYPE  TMC2130
+// #define X_DRIVER_TYPE  TMC2130
+// #define Y_DRIVER_TYPE  TMC2130
+// #define Z_DRIVER_TYPE  TMC2130
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
